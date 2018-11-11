@@ -6,6 +6,28 @@ let botDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-do
 let beachDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/beach.svg";
 let spaceDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/space.svg";
 
+let openDoor1;
+let openDoor2;
+let openDoor3;
+
+randomChoreDoorGenerator = () => {
+    let numClosedDoors = 3;
+    let choreDoor = Math.floor(Math.random() * numClosedDoors);
+    if(choreDoor === 0) {
+        openDoor1 = botDoorPath;
+        openDoor2 = beachDoorPath;
+        openDoor3 = spaceDoorPath;
+    }else if(choreDoor === 2) {
+        openDoor2 = botDoorPath;
+        openDoor1 = beachDoorPath;
+        openDoor3 = spaceDoorPath;
+    } else {
+        openDoor3 = botDoorPath;
+        openDoor2 = beachDoorPath;
+        openDoor1 = spaceDoorPath;
+    }
+};
+
 door1.onclick = () => {
     doorImage1.src = botDoorPath;
 };
@@ -17,4 +39,4 @@ door3.onclick = () => {
     doorImage3.src = spaceDoorPath;
 };
 
-    
+randomChoreDoorGenerator();
