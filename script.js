@@ -79,6 +79,10 @@ door3.onclick = () => {
     }
 };
 
+startButton.onclick = () => {
+    
+}
+
 function gameOver(status) {
     if (status === 'win') {
         startButton.innerHTML = 'You win! Play again?';
