@@ -80,7 +80,15 @@ door3.onclick = () => {
 };
 
 startButton.onclick = () => {
-    
+    startRound();
+};
+
+function startRound() {
+    numClosedDoors = 3;
+    doorImage1.src = closedDoorPath;
+    startButton.innerHTML = 'Good Luck';
+    currentlyPlaying = true;
+    randomChoreDoorGenerator();
 }
 
 function gameOver(status) {
@@ -92,4 +100,4 @@ function gameOver(status) {
       currentlyPlaying = false;
 };
 
-randomChoreDoorGenerator();
+startRound();
