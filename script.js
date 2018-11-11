@@ -79,9 +79,11 @@ door3.onclick = () => {
     }
 };
 
-startButton.onclick = () => {
-    startRound();
-};
+if (!currentlyPlaying) {
+        startButton.onclick = () => {
+            startRound();
+    }   ;
+}
 
 function startRound() {
     numClosedDoors = 3;
